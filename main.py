@@ -2,6 +2,9 @@
 # ║     PROJECT: TO-DO LIST MANAGER      ║
 # ╚══════════════════════════════════════╝
 
+import json
+
+task={}
 
 def menu():
     print("─────────|Welcome to the Task Manager|─────────")
@@ -16,6 +19,10 @@ def menu():
     return
 
 menu()
+
+choice= input("Enter Choice from menu: ")
+
+
 
 
 

@@ -2,7 +2,7 @@
 # ║     PROJECT: TO-DO LIST MANAGER      ║
 # ╚══════════════════════════════════════╝
 
-
+import json
 
 task={}
 
@@ -26,7 +26,7 @@ while True:
     if choice== "1":
         add= input("Enter the Serial no. of the Task: ")
         add1= input("Enter the Task: ")
-        with open("main.txt", "w") as f:
+        with open("main.json", "w") as f:
             task[add]=[add1]
             task1= f.write(str(task))
             print("Task Added Successfully")
@@ -37,7 +37,7 @@ while True:
         
 
     elif choice =="2":
-        with open("main.txt", "r") as f:
+        with open("main.json", "r") as f:
             task1= f.read()
             print("All Tasks are:" , task1)
 
@@ -47,7 +47,7 @@ while True:
     elif choice =="3":
         serialno= input("Enter the Serial No. of the Task to be Updated: ")
         task1 = input("Enter the Updated Task: ")
-        with open("main.txt", "w") as f:
+        with open("main.json", "w") as f:
             task[serialno]=[task1]
             task2= f.write(str(task))
             print("Task Updated Successfully")

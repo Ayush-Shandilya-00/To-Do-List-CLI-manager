@@ -7,6 +7,7 @@ import json
 task={}
 
 def menu():
+    print("")
     print("─────────|Welcome to the Task Manager|─────────")
     print("")
     print("                  ❀ MENU ❀")
@@ -26,12 +27,17 @@ while True:
     if choice== "1":
         add= input("Enter the Serial no. of the Task: ")
         add1= input("Enter the Task: ")
-        with open("main.json", "w") as f:
-            task[add]=[add1]
-            task =json.loads(json.dumps(task))
-            json.dump(task, f, indent=4)
+        if add in task :
+            print("Task with this Serial No. already exists. Please use a different Serial No.")
+            
+        else:
+
+            with open("main.json", "w") as f:
+                task[add]=[add1]
+                task =json.loads(json.dumps(task))
+                json.dump(task, f, indent=4)
         
-            print("Task Added Successfully")
+                print("Task Added Successfully")
 
         menu()
         choice= input("Enter Choice from menu: ")
@@ -49,13 +55,44 @@ while True:
     elif choice =="3":
         serialno= input("Enter the Serial No. of the Task to be Updated: ")
         task1 = input("Enter the Updated Task: ")
-        with open("main.json", "w") as f:
-            task[serialno]=[task1]
-            task2= f.write(str(task))
-            print("Task Updated Successfully")
+        if serialno not in task:
+            print("Task with this Serial No. does not exist. Please check the Serial No.")
+            
+        else:
+
+            with open("main.json", "w") as f:
+                task[serialno]=[task1]
+                json.dump(task, f, indent=4)
+                print("Task Updated Successfully")
 
         menu()
         choice= input("Enter Choice from menu: ")
+
+    elif choice =="4":
+        serialno1= input("Enter the Serial no. of the Task to be Deleted: ")
+
+        if serialno1 not in task:
+            print("Task with this serial No. does not exist. Please check the Serial No.")
+        else:
+            with open("main.json", "w") as f:
+                del task[serialno1]
+                json.dump(task, f, indent=4)
+                print("Task Deleted Successfully")
+
+            menu()
+            choice= input("Enter Choice from menu: ")
+
+    elif choice =="5":
+        print("Exiting the Task Manager. Goodbye!")
+        break
+    
+    else:
+        print("Invalid choice. Please select a valid option from the menu.")
+
+
+            
+
+
         
 
 

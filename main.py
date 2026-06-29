@@ -28,7 +28,9 @@ while True:
         add1= input("Enter the Task: ")
         with open("main.json", "w") as f:
             task[add]=[add1]
-            task1= f.write(str(task))
+            task =json.loads(json.dumps(task))
+            json.dump(task, f, indent=4)
+        
             print("Task Added Successfully")
 
         menu()

@@ -17,10 +17,13 @@ The program automatically creates a file named `main.json` in the same folder to
 ```json
 {
     "1": [
-        "i have to code for 4 hrs"
+        "Code!"
     ],
     "2": [
-        "And push it on Github"
+        "Sleep!"
+    ],
+    "3": [
+        "Repeat!"
     ]
 }
 ```

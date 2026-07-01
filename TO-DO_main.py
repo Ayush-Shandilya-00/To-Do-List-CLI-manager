@@ -3,8 +3,16 @@
 # ╚══════════════════════════════════════╝
 
 import json
+import os
 
-task={}
+def load_tasks():
+    if os.path.exists("main.json"):
+        with open("main.json", "r") as f:
+            return json.load(f)
+    else:
+        return {}
+    
+task= load_tasks()
 
 def menu():
     print("")
@@ -38,6 +46,7 @@ while True:
                 json.dump(task, f, indent=4)
         
                 print("Task Added Successfully")
+                
 
         menu()
         choice= input("Enter Choice from menu: ")
@@ -48,6 +57,7 @@ while True:
         with open("main.json", "r") as f:
             task1= f.read()
             print("All Tasks are:" , task1)
+            
 
         menu()
         choice= input("Enter Choice from menu: ")
@@ -88,6 +98,7 @@ while True:
     
     else:
         print("Invalid choice. Please select a valid option from the menu.")
+        break
 
 
             

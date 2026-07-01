@@ -20,10 +20,6 @@ Serial No: 2, Task: Sleep!
 Serial No: 3, Task: Repeat!
 ```
 
-### 🧠 Understanding the File Structure:
-* The `"1"` or `"2"` outside the brackets is the **Serial Number** of the task.
-* The text inside the brackets is the actual **Task** description.
-
 ## 💻 How to Run the Project
 
 1. Download the `TO-DO_main.py` file to your computer.

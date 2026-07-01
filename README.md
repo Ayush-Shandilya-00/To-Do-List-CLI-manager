@@ -15,17 +15,9 @@ This is a text-based To-Do List application built with Python. I created this pr
 The program automatically creates a file named `main.json` in the same folder to store your text. It organizes the data like this:
 
 ```json
-{
-    "1": [
-        "Code!"
-    ],
-    "2": [
-        "Sleep!"
-    ],
-    "3": [
-        "Repeat!"
-    ]
-}
+Serial No: 1, Task: Code!
+Serial No: 2, Task: Sleep!
+Serial No: 3, Task: Repeat!
 ```
 
 ### 🧠 Understanding the File Structure:

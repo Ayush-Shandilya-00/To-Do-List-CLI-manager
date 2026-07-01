@@ -57,7 +57,15 @@ while True:
         with open("main.json", "r") as f:
             task1= f.read()
             print("All Tasks are:" , task1)
+
+            if len(task) != 0:
+                for serial_no, task in task.items():
+                    print(f"Serial No: {serial_no}, Task: {task[0]}")
+            else:
+                print("No tasks found.")
+
             
+                   
 
         menu()
         choice= input("Enter Choice from menu: ")
